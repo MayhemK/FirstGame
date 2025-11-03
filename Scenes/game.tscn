@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bpjte6hdjl6qn"]
+[gd_scene load_steps=23 format=3 uid="uid://bpjte6hdjl6qn"]
 
 [ext_resource type="PackedScene" uid="uid://dp326hu1fm34u" path="res://Scenes/character_body_2d.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://dqe1qp2b36ktu" path="res://sprites/coin.png" id="2_7jktm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://maawjovpt3hh" path="res://scripts/supercoin.gd" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://bm3x8y2k74twl" path="res://Scenes/killzone.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://1s02pse0jobi" path="res://Scenes/slime.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://bksuco1w40vuy" path="res://Scenes/teleport.tscn" id="10_ldgsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("2_e2o6t")
@@ -305,6 +306,9 @@ distance = -223.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h4fw4"]
 size = Vector2(50, 46)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5yvi"]
+size = Vector2(935, 28)
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -406,11 +410,6 @@ libraries = {
 }
 autoplay = "halfBridge2"
 
-[node name="Killzone" parent="." instance=ExtResource("7_1l0tm")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("WorldBoundaryShape2D_v158k")
-
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Slime" parent="Enemies" instance=ExtResource("9_h4fw4")]
@@ -419,9 +418,25 @@ position = Vector2(312, 84)
 [node name="Slime3" parent="Enemies" instance=ExtResource("9_h4fw4")]
 position = Vector2(638, 180)
 
-[node name="Killzone2" parent="." instance=ExtResource("7_1l0tm")]
+[node name="Death" type="Node" parent="."]
+
+[node name="Killzone" parent="Death" instance=ExtResource("7_1l0tm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death/Killzone"]
+shape = SubResource("WorldBoundaryShape2D_v158k")
+
+[node name="Killzone2" parent="Death" instance=ExtResource("7_1l0tm")]
 position = Vector2(962, 130)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death/Killzone2"]
 position = Vector2(6, 40)
 shape = SubResource("RectangleShape2D_h4fw4")
+
+[node name="portals" type="Node" parent="."]
+
+[node name="Teleport" parent="portals" instance=ExtResource("10_ldgsr")]
+position = Vector2(1051, 63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portals/Teleport"]
+position = Vector2(-446.5, 3)
+shape = SubResource("RectangleShape2D_o5yvi")
