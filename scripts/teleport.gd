@@ -1,4 +1,5 @@
 extends Area2D
 
-func _on_body_entered(body):
-	print("you finished this level")
+
+func _on_body_entered(body: Node2D) -> void:
+	print("you have finished the level")
