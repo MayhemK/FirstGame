@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bpjte6hdjl6qn"]
+[gd_scene load_steps=27 format=3 uid="uid://bpjte6hdjl6qn"]
 
 [ext_resource type="PackedScene" uid="uid://dp326hu1fm34u" path="res://Scenes/character_body_2d.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bfbrbelu83bpe" path="res://Scenes/game_manager.gd" id="1_rfjv2"]
@@ -312,9 +312,12 @@ size = Vector2(50, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ldgsr"]
 size = Vector2(14, 20)
 
+[sub_resource type="AudioStream" id="AudioStream_rfjv2"]
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_rfjv2")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -388,6 +391,9 @@ position = Vector2(26, 131)
 [node name="Coin15" parent="Pickups" instance=ExtResource("5_ryrav")]
 position = Vector2(823, 180)
 
+[node name="Coin16" parent="Pickups" instance=ExtResource("5_ryrav")]
+position = Vector2(1032, 72)
+
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("3_feb5d")]
@@ -451,11 +457,29 @@ shape = SubResource("RectangleShape2D_ldgsr")
 [node name="Labels" type="Node" parent="."]
 
 [node name="Label" type="Label" parent="Labels"]
-offset_left = 56.0
-offset_top = 87.0
-offset_right = 96.0
-offset_bottom = 136.0
+offset_left = 53.0
+offset_top = 81.0
+offset_right = 139.0
+offset_bottom = 130.0
 theme_override_fonts/font = ExtResource("12_rku1e")
 theme_override_font_sizes/font_size = 8
-text = "Text
-"
+text = "WASD to move
+Space to jump
+Hold to jump 
+higher"
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 960.0
+offset_top = 15.0
+offset_right = 1126.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_rku1e")
+theme_override_font_sizes/font_size = 8
+text = "You collected X coins "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BGMPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStream_rfjv2")
