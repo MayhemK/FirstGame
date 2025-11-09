@@ -1,19 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://b50nt0luu6tif"]
 
-[ext_resource type="Texture2D" uid="uid://dso1mn6m6ftmn" path="res://reskin/forest_title_set.png" id="1_1rc8e"]
+[ext_resource type="Texture2D" uid="uid://cgjbne3w6vcik" path="res://sprites/platforms.png" id="1_1rc8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
-size = Vector2(32, 9)
+size = Vector2(30, 8)
 
 [node name="Platform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1rc8e")
 region_enabled = true
-region_rect = Rect2(387, 3, 26, 10)
+region_rect = Rect2(17, 33, 30, 7)
 region_filter_clip_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_s8bxr")
 one_way_collision = true
