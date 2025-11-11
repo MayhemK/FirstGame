@@ -337,6 +337,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1150
 limit_bottom = 208
+limit_smoothed = true
 script = ExtResource("5_o5yvi")
 
 [node name="Pickups" type="Node2D" parent="."]
