@@ -6,4 +6,5 @@ extends Area2D
 func _on_body_entered(body):
 	if body == player:
 		print("you have finished the level")
-		camera_2d.set_camera_limits(1185, 0, 145, 206)
+		camera_2d.set_camera_limits(1185, 0, 2336, 208)
+		player.global_position = Vector2(1264, 139)
