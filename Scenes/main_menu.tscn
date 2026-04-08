@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d6ixfg1dbu2i"]
+
+[ext_resource type="PackedScene" uid="uid://6hrc5v61ex2w" path="res://Scenes/fade.tscn" id="1_28flt"]
+[ext_resource type="Script" uid="uid://qpylerxaawjb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+
+[node name="Main Menu" type="Node2D" unique_id=1285865697]
+script = ExtResource("1_48xlc")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1557127363]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button_manager" unique_id=1132638530]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 342.0
+offset_top = 92.0
+offset_right = 565.0
+offset_bottom = 272.0
+text = "PLAY"
+
+[node name="Options" type="Button" parent="Button_manager" unique_id=842535560]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.025
+anchor_bottom = 1.5500001
+offset_left = 238.0
+offset_top = 295.0
+offset_right = 238.0
+offset_bottom = 295.0
+text = "ERPSHUNS
+"
+
+[node name="Quit" type="Button" parent="Button_manager" unique_id=1070077081]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 514.0
+offset_top = 391.0
+offset_right = 583.0
+offset_bottom = 467.0
+text = "QUIT
+"
+
+[node name="Fade" parent="." unique_id=1628387082 instance=ExtResource("1_28flt")]

@@ -1,4 +1,5 @@
-extends Control
+extends Node2D
+
 
 var button_type = null
 
@@ -9,10 +10,8 @@ func _ready():
 
 func play():
 	print("Play button pressed")
-	#$fade.show()
-	#await $fade/Fade.timeout
-	#await $fade/AnimationPlayer.play("fade_in")
-	#get_tree().change_scene_to_file('res://Scenes/game.tscn')
+
+	get_tree().change_scene_to_file('res://Scenes/game.tscn')
 
 func quit_game():
 	print("Quit Button Pressed")
