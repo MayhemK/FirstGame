@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dpvpij4s0h1bw"]
+
+[ext_resource type="Script" uid="uid://dcvkylu2t4v8i" path="res://Scenes/options.gd" id="1_prnvy"]
+
+[node name="Options" type="Node2D" unique_id=1358439828]
+script = ExtResource("1_prnvy")
+
+[node name="Control" type="Control" parent="." unique_id=1947501757]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OptionButton" type="OptionButton" parent="Control" unique_id=933696415]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 213.0
+offset_right = 529.0
+offset_bottom = 244.0
+selected = 0
+item_count = 6
+popup/item_0/text = "0"
+popup/item_0/id = 3
+popup/item_1/text = "20"
+popup/item_1/id = 0
+popup/item_2/text = "40"
+popup/item_2/id = 1
+popup/item_3/text = "60"
+popup/item_3/id = 2
+popup/item_4/text = "80"
+popup/item_4/id = 4
+popup/item_5/text = "100"
+popup/item_5/id = 5
+
+[node name="Volume" type="Label" parent="." unique_id=446202618]
+offset_left = 396.0
+offset_top = 215.0
+offset_right = 464.0
+offset_bottom = 264.0
+text = "Volume: 
+"
