@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dp326hu1fm34u"]
+[gd_scene format=3 uid="uid://dp326hu1fm34u"]
 
 [ext_resource type="Texture2D" uid="uid://b5evl0gqb2eab" path="res://sprites/knight.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://c1s4p8l576ujc" path="res://sprites/player.gd" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://dbrdja47s48vf" path="res://sprites/skele.png" id="3_it8n0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -17,6 +18,22 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd465"]
 atlas = ExtResource("1_f50pn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u736u"]
+atlas = ExtResource("3_it8n0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glyrq"]
+atlas = ExtResource("3_it8n0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f6q8"]
+atlas = ExtResource("3_it8n0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sln1"]
+atlas = ExtResource("3_it8n0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88kja"]
@@ -108,6 +125,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_u736u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glyrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f6q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sln1")
+}],
+"loop": true,
+"name": &"idleSK",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_88kja")
 }],
 "loop": true,
@@ -171,17 +205,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_f50pn"]
 radius = 5.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=162169619]
 z_index = 5
 collision_layer = 2
 script = ExtResource("1_ij6vw")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1850033350]
 position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_lhvu3")
-animation = &"idle"
+animation = &"idleSK"
 autoplay = "idle"
+frame_progress = 0.88122034
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105887553]
 position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_f50pn")

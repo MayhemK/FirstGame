@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite.play("idle")
+			animated_sprite.play("idleSK")
 		else: 
 			animated_sprite.play("run")
 
