@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("runSK")
 
 	else: 
-		animated_sprite.play("jump")
+		animated_sprite.play("jumpSK")
 	
 	if direction:
 		velocity.x = direction * SPEED
