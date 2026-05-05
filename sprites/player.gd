@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 		if direction == 0:
 			animated_sprite.play("idleSK")
 		else: 
-			animated_sprite.play("run")
+			animated_sprite.play("runSK")
 
 	else: 
 		animated_sprite.play("jump")
