@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://qpylerxaawjb" path="res://Scenes/main_menu.gd" id="1_48xlc"]
 
 [node name="Main Menu" type="Node2D" unique_id=1285865697]
-position = Vector2(322, 198)
+position = Vector2(321, 197)
 scale = Vector2(2, 2)
 script = ExtResource("1_48xlc")
 
@@ -15,9 +15,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Button_manager" unique_id=1632479108]
-layout_mode = 0
-offset_right = 319.0
-offset_bottom = 102.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.325
+anchor_top = -0.52500004
+anchor_right = -2.325
+anchor_bottom = -0.52500004
+offset_left = 62.5
+offset_top = 38.0
+offset_right = 381.5
+offset_bottom = 140.0
 
 [node name="Play" type="Button" parent="Button_manager/VBoxContainer" unique_id=1132638530]
 unique_name_in_owner = true
