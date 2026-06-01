@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bm3x8y2k74twl" path="res://Scenes/killzone.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://1s02pse0jobi" path="res://Scenes/slime.tscn" id="9_h4fw4"]
 [ext_resource type="FontFile" uid="uid://bf5i3dm5mpjky" path="res://fonts/PixelOperator8.ttf" id="12_rku1e"]
+[ext_resource type="FontFile" uid="uid://vn0dbmm6m5hn" path="res://fonts/PixelOperator8-Bold.ttf" id="15_nb51f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("2_e2o6t")
@@ -470,16 +471,16 @@ shape = SubResource("RectangleShape2D_h4fw4")
 [node name="Labels" type="Node" parent="." unique_id=2145390352]
 
 [node name="Label" type="Label" parent="Labels" unique_id=984166488]
-offset_left = 53.0
-offset_top = 81.0
-offset_right = 139.0
-offset_bottom = 130.0
+offset_left = 22.0
+offset_top = 53.0
+offset_right = 147.0
+offset_bottom = 102.0
+theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("12_rku1e")
 theme_override_font_sizes/font_size = 8
 text = "WASD to move
 Space to jump
-Hold to jump 
-higher"
+Hold to jump  higher"
 
 [node name="Label2" type="Label" parent="Labels" unique_id=249998596]
 visible = false
@@ -494,6 +495,17 @@ text = "You collected X coins "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Labels" unique_id=165548028]
+offset_left = 1552.0
+offset_top = -159.0
+offset_right = 1814.0
+offset_bottom = -84.0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("15_nb51f")
+text = "END OF CURRENT 
+Thanks for playing
+More to come soon"
 
 [node name="enemies lvl2" type="Node" parent="." unique_id=562160363]
 
